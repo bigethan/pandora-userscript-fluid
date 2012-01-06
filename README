@@ -1,6 +1,6 @@
  Userscript for a Fluid Pandora App.  Currently has the following features:
 
-- Auto Login
+- Auto Login - requires you to edit the script with your login
 - Keeps the interface "active" to let pandora keep playing eternally
 - Adds the following to the Dock menu
   - Play / Pause
