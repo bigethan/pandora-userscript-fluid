@@ -1,0 +1,14 @@
+ Userscript for a Fluid Pandora App.  Currently has the following features:
+
+- Auto Login
+- Keeps the interface "active" to let pandora keep playing eternally
+- Adds the following to the Dock menu
+  - Play / Pause
+  - Pause for 5 minutes
+  - Thumbs Up / Down
+  - Skip Track
+  - Artist and Song Title
+
+TODO:
+- Scrobble
+- ?
