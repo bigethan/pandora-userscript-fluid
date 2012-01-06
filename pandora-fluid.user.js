@@ -4,6 +4,11 @@
 var pandoraEmail = 'your@pandora.email';
 var pandoraPass = 'your-pandora-password';
 
+//a couple styles to make the page layout more compactly
+$("#brandingBar .rightcolumn").css('right', '210px !important');
+$('#brandingBar .middlecolumn').css('left' ,'-211px !important');
+
+
 //keep them playing by clicking the interface
 setInterval( function() {
     $('.dots .dot').trigger('click');
