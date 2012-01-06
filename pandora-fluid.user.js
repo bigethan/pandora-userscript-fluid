@@ -11,11 +11,10 @@ setInterval( function() {
 
 //set a better page title
 setInterval( function() {
-    var stationName, songName;
+    var stationName, songName, artistName;
     stationName = $('#stationList .selected .stationNameText').text();
     songName = $('#trackInfo .info .songTitle').text();
     artistName = $('#trackInfo .info  .artistSummary').text();
-    songName = $('#trackInfo .songTitle').text();
     window.document.title = stationName + " :: " + artistName + " :: " + songName;
 }, 1000);
 
@@ -25,8 +24,9 @@ setInterval( function() {
 //as soon as there is one, either stop this loop
 //sign in if needed.
 loginInterval = setInterval( function() {
-    var processed = false;
-    var wasVisible = false;
+    var submitted, processed, wasVisible;
+    processed = false;
+    wasVisible = false;
     //if .anonymousUser is visible
     if($("#brandingBar .anonymousUser").is(':visible')) {
         //click on the .signInLink child
