@@ -10,24 +10,36 @@ $('#brandingBar .middlecolumn').css('left' ,'-211px !important');
 
 
 //keep them playing by clicking the interface
+//every 30 min
 setInterval( function() {
     $('.dots .dot').trigger('click');
 }, 30*(60*1000));
 
-//set a better page title
+//on a 1 second interval:
+// - set a better page title
+// - sometimes pandora gets confused, this clicks 
+//   the reload link in their "we've messed up" message
 setInterval( function() {
+    //page title
     var stationName, songName, artistName;
     stationName = $('#stationList .selected .stationNameText').text();
     songName = $('#trackInfo .info .songTitle').text();
     artistName = $('#trackInfo .info  .artistSummary').text();
     window.document.title = stationName + " :: " + artistName + " :: " + songName;
+    
+    //reload link
+    var reloadLink;
+    reloadLink = $('.toastItemReload');
+	if(reloadLink.length) {
+		$('.toastItemReload').trigger('click');
+	}
 }, 1000);
 
 
 //auto sign in
 //check to see if there's a login link or a user link
-//as soon as there is one, either stop this loop
-//sign in if needed.
+//as soon as there is one, either stop this loop or
+//sign in .
 loginInterval = setInterval( function() {
     var submitted, processed, wasVisible;
     processed = false;
