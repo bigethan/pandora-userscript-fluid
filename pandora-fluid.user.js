@@ -47,7 +47,7 @@ loginInterval = setInterval( function() {
     //if .anonymousUser is visible
     if($("#brandingBar .anonymousUser").is(':visible')) {
         //click on the .signInLink child
-        window.location.hash = $('#brandingBar .anonymousUser .signInLink').attr('href');
+        $('#brandingBar .anonymousUser .signInLink').trigger('click');
         //fill and submit the form with pandoraEmail and pandoraPass
         $(".signinForm input[name='email']").attr('value', pandoraEmail);
         $(".signinForm input[name='password']").attr('value', pandoraPass);
@@ -60,7 +60,7 @@ loginInterval = setInterval( function() {
     if(loginInterval && processed) {
         clearInterval(loginInterval);
     }
-}, 300);
+}, 500);
 
 //add menu items
 window.fluid.addDockMenuItem("Play", function() {
