@@ -13,7 +13,7 @@ $('#brandingBar .middlecolumn').css('left' ,'-211px !important');
 //every 30 min
 setInterval( function() {
     $('.dots .dot').trigger('click');
-}, 30*(60*1000));
+}, 20*(60*1000));
 
 //on a 1 second interval:
 // - set a better page title
@@ -30,9 +30,19 @@ setInterval( function() {
     //reload link
     var reloadLink;
     reloadLink = $('.toastItemReload');
-	if(reloadLink.length) {
-		$('.toastItemReload').trigger('click');
-	}
+    if(reloadLink.length) {
+        $('.toastItemReload').trigger('click');
+    }
+	
+    //replace ad iframe with lastfm upcoming concernts
+    //didn't want to hide ads, but some of the ads were
+    //kinda offensive ("SINGLE LADIES IN YOUR AREA")
+    //this doesn't hide other ads, just where the bad ones were.
+    adFrames = $('#advertisement iframe');
+    if(adFrames[0] && adFrames[0].src.indexOf('last.fm') == -1) {
+        $('#advertisement).css('background-color', '#eee');
+        adFrames[0].src = 'http://m.last.fm/home/eventrecs';
+    }
 }, 1000);
 
 
