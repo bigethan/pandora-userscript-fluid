@@ -40,7 +40,7 @@ setInterval( function() {
     //this doesn't hide other ads, just where the bad ones were.
     adFrames = $('#advertisement iframe');
     if(adFrames[0] && adFrames[0].src.indexOf('last.fm') == -1) {
-        $('#advertisement).css('background-color', '#eee');
+        $('#advertisement').css('background-color', '#eee');
         adFrames[0].src = 'http://m.last.fm/home/eventrecs';
     }
 }, 1000);
